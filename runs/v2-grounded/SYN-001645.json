@@ -1,0 +1,26 @@
+{
+ "key": "31b8a1854a69dd9a",
+ "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You write one-screen summaries of Malaysian companies for a team that vets suppliers and project partners. They read\nyour summary first to decide whether a company is worth a closer look, so missing a red flag is the worst mistake you\ncan make, and inventing one is the second worst. The records are as of 31 December 2025.\n\nWrite in Markdown, in this order:\n\n1. `**Verdict: <High concern | Look closer | Low concern>** — <one sentence on why>`\n   - High concern: something that could stop the deal (not Active, winding-up petition, bad audit opinion,\n     negative equity, or a situation about to become one of these).\n   - Look closer: real questions to ask before going ahead (losses, falling revenue or profit, material open\n     litigation, missing accounts, a possible change of control).\n   - Low concern: nothing material found.\n2. `**Red flags**` then one bullet per flag, most serious first, each with the number that backs it up. If there\n   are none, write `**Red flags:** none found.` on one line.\n3. `**Snapshot**` then two or three sentences: what the company does, where, how old; size and direction of revenue\n   and profit; who owns it.\n4. Optionally `**Also worth knowing**` with up to three short bullets for minor points.\n\nRules: under 160 words. Plain English for a busy reader, no filler, no advice beyond the verdict. Money as\nRM 1.23m / RM 456k. Never state a number that isn't in the input. If something isn't in the input, don't guess.\n\nYou get facts that were already extracted and checked by code, including a list of flags with a severity and a\nrule-based verdict.\n\n- Every flag with severity \"critical\" or \"warning\" must appear under Red flags, with its number. Don't drop or merge\n  them away.\n- \"info\" flags are optional; use the most useful ones under Also worth knowing.\n- Start from the rule-based verdict. You may move it up or down one level only if the figures clearly support it\n  (for example, equity about to turn negative); if you do, the verdict sentence must say why.\n- Use only numbers that appear in the facts. Don't compute new ones.\n"
+  },
+  {
+   "role": "user",
+   "content": "Facts:\n\n{\n \"registration_number\": \"SYN-001645\",\n \"name\": \"Unity Cahaya Bina Sdn. Bhd.\",\n \"industry\": \"Construction\",\n \"state\": \"Kuala Lumpur\",\n \"status\": \"Active\",\n \"nature_of_business\": \"Renovation and interior fit-out for offices\",\n \"incorporated\": \"2002-05-25\",\n \"age_years\": 23.6,\n \"directors\": 3,\n \"shareholders\": [\n  \"Director 1 (individual, 74.26%)\",\n  \"Director 3 (individual, 25.07%)\",\n  \"Director 2 (individual, 0.67%)\"\n ],\n \"years\": [\n  {\n   \"year\": 2022,\n   \"year_end\": \"2022-09-30\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 19399581,\n   \"profit_after_tax\": 622505,\n   \"total_equity\": 11254535,\n   \"borrowings\": 3717067,\n   \"operating_cash_flow\": 1497907,\n   \"cash\": 1035976,\n   \"net_margin\": 0.0321,\n   \"quick_ratio\": 1.1205,\n   \"interest_cover\": 5.0065,\n   \"leverage\": 0.7414\n  },\n  {\n   \"year\": 2023,\n   \"year_end\": \"2023-09-30\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 20533835,\n   \"profit_after_tax\": 755552,\n   \"total_equity\": 11783421,\n   \"borrowings\": 3934396,\n   \"operating_cash_flow\": 1674917,\n   \"cash\": 984771,\n   \"net_margin\": 0.0368,\n   \"quick_ratio\": 1.0064,\n   \"interest_cover\": 5.5942,\n   \"leverage\": 0.7605\n  },\n  {\n   \"year\": 2024,\n   \"year_end\": \"2024-09-30\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 21288282,\n   \"profit_after_tax\": 930777,\n   \"total_equity\": 12434965,\n   \"borrowings\": 4078952,\n   \"operating_cash_flow\": 1706146,\n   \"cash\": 1945541,\n   \"net_margin\": 0.0437,\n   \"quick_ratio\": 1.179,\n   \"interest_cover\": 6.4591,\n   \"leverage\": 0.7296\n  }\n ],\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_against\": [],\n  \"open_against_total\": 0,\n  \"winding_up_against\": []\n },\n \"flags\": [],\n \"rule_based_verdict\": \"Low concern\"\n}"
+  }
+ ],
+ "text": "**Verdict: Low concern** — The company has a clean record with no material issues found.\n**Red flags:** none found.\n**Snapshot** — Unity Cahaya Bina Sdn. Bhd. is a 23.6-year-old construction company in Kuala Lumpur, specializing in office renovation and interior fit-out, with revenue of RM 21.3m and profit of RM 930k in 2024. It is owned by three individuals.\n**Also worth knowing** \n* The company has an unqualified audit opinion for the last three years.\n* It has a positive operating cash flow and increasing revenue.",
+ "usage": {
+  "prompt_tokens": 1165,
+  "completion_tokens": 127,
+  "total_tokens": 1292,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "neurons": 57.07810974121094
+ },
+ "seconds": 2.49,
+ "at": "2026-11-24T21:33:13+0800"
+}

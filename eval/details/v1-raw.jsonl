@@ -1,0 +1,22 @@
+{"registrationNumber": "SYN-000029", "missed_flags": ["control_change"], "false_alarms": [], "unsupported_numbers": [], "verdict": "Low concern", "label": "Look closer", "words": 82}
+{"registrationNumber": "SYN-000067", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Look closer", "words": 80}
+{"registrationNumber": "SYN-000217", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "High concern", "words": 117}
+{"registrationNumber": "SYN-000302", "missed_flags": ["no_financials"], "false_alarms": [], "unsupported_numbers": [], "verdict": "Low concern", "label": "Look closer", "words": 67}
+{"registrationNumber": "SYN-000381", "missed_flags": [], "false_alarms": [], "unsupported_numbers": ["49%"], "verdict": "Low concern", "label": "Low concern", "words": 80}
+{"registrationNumber": "SYN-000397", "missed_flags": ["large_settled_claim", "missing_year"], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Look closer", "words": 106}
+{"registrationNumber": "SYN-000451", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "High concern", "label": "High concern", "words": 109}
+{"registrationNumber": "SYN-000546", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Low concern", "words": 118}
+{"registrationNumber": "SYN-000674", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Low concern", "label": "Low concern", "words": 74}
+{"registrationNumber": "SYN-000785", "missed_flags": ["persistent_losses"], "false_alarms": ["negative equity"], "unsupported_numbers": [], "verdict": "High concern", "label": "High concern", "words": 89}
+{"registrationNumber": "SYN-000802", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Look closer", "words": 94}
+{"registrationNumber": "SYN-000923", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Look closer", "words": 96}
+{"registrationNumber": "SYN-001085", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Low concern", "label": "Low concern", "words": 99}
+{"registrationNumber": "SYN-001212", "missed_flags": ["profit_decline", "repeated_winding_up"], "false_alarms": [], "unsupported_numbers": ["152000RM", "38000RM"], "verdict": "High concern", "label": "High concern", "words": 98}
+{"registrationNumber": "SYN-001253", "missed_flags": ["missing_year"], "false_alarms": [], "unsupported_numbers": [], "verdict": "Low concern", "label": "Look closer", "words": 93}
+{"registrationNumber": "SYN-001298", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Look closer", "words": 114}
+{"registrationNumber": "SYN-001389", "missed_flags": ["repeated_winding_up"], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "High concern", "words": 123}
+{"registrationNumber": "SYN-001529", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Low concern", "words": 106}
+{"registrationNumber": "SYN-001618", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Look closer", "words": 89}
+{"registrationNumber": "SYN-001645", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Low concern", "label": "Low concern", "words": 111}
+{"registrationNumber": "SYN-001829", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Low concern", "words": 99}
+{"registrationNumber": "SYN-001894", "missed_flags": [], "false_alarms": [], "unsupported_numbers": [], "verdict": "Look closer", "label": "Low concern", "words": 128}

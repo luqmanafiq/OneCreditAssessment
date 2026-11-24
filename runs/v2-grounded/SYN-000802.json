@@ -1,0 +1,26 @@
+{
+ "key": "7eb3af61e16a3794",
+ "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You write one-screen summaries of Malaysian companies for a team that vets suppliers and project partners. They read\nyour summary first to decide whether a company is worth a closer look, so missing a red flag is the worst mistake you\ncan make, and inventing one is the second worst. The records are as of 31 December 2025.\n\nWrite in Markdown, in this order:\n\n1. `**Verdict: <High concern | Look closer | Low concern>** — <one sentence on why>`\n   - High concern: something that could stop the deal (not Active, winding-up petition, bad audit opinion,\n     negative equity, or a situation about to become one of these).\n   - Look closer: real questions to ask before going ahead (losses, falling revenue or profit, material open\n     litigation, missing accounts, a possible change of control).\n   - Low concern: nothing material found.\n2. `**Red flags**` then one bullet per flag, most serious first, each with the number that backs it up. If there\n   are none, write `**Red flags:** none found.` on one line.\n3. `**Snapshot**` then two or three sentences: what the company does, where, how old; size and direction of revenue\n   and profit; who owns it.\n4. Optionally `**Also worth knowing**` with up to three short bullets for minor points.\n\nRules: under 160 words. Plain English for a busy reader, no filler, no advice beyond the verdict. Money as\nRM 1.23m / RM 456k. Never state a number that isn't in the input. If something isn't in the input, don't guess.\n\nYou get facts that were already extracted and checked by code, including a list of flags with a severity and a\nrule-based verdict.\n\n- Every flag with severity \"critical\" or \"warning\" must appear under Red flags, with its number. Don't drop or merge\n  them away.\n- \"info\" flags are optional; use the most useful ones under Also worth knowing.\n- Start from the rule-based verdict. You may move it up or down one level only if the figures clearly support it\n  (for example, equity about to turn negative); if you do, the verdict sentence must say why.\n- Use only numbers that appear in the facts. Don't compute new ones.\n"
+  },
+  {
+   "role": "user",
+   "content": "Facts:\n\n{\n \"registration_number\": \"SYN-000802\",\n \"name\": \"Sinar Gemilang Associates Sdn. Bhd.\",\n \"industry\": \"Professional Services\",\n \"state\": \"Kuala Lumpur\",\n \"status\": \"Active\",\n \"nature_of_business\": \"Perunding pengurusan untuk PKS\",\n \"incorporated\": \"2023-12-23\",\n \"age_years\": 2.0,\n \"directors\": 5,\n \"shareholders\": [\n  \"Director 5 (individual, 72.94%)\",\n  \"Director 1 (individual, 21.39%)\",\n  \"Director 4 (individual, 5.67%)\"\n ],\n \"years\": [\n  {\n   \"year\": 2024,\n   \"year_end\": \"2024-06-30\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 27799367,\n   \"profit_after_tax\": -2575829,\n   \"total_equity\": 30508762,\n   \"borrowings\": 9340421,\n   \"operating_cash_flow\": -1727574,\n   \"cash\": 4905472,\n   \"net_margin\": -0.0927,\n   \"quick_ratio\": 2.5938,\n   \"interest_cover\": -4.014,\n   \"leverage\": 0.4509\n  }\n ],\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_against\": [],\n  \"open_against_total\": 0,\n  \"winding_up_against\": []\n },\n \"flags\": [\n  {\n   \"id\": \"latest_loss\",\n   \"severity\": \"warning\",\n   \"text\": \"Loss of -RM 2.58m in FY2024.\"\n  },\n  {\n   \"id\": \"cash_burn\",\n   \"severity\": \"info\",\n   \"text\": \"Operating cash flow was -RM 1.73m in FY2024.\"\n  },\n  {\n   \"id\": \"young_company\",\n   \"severity\": \"info\",\n   \"text\": \"Incorporated 2023-12-23, about 2.0 years old.\"\n  },\n  {\n   \"id\": \"director_churn\",\n   \"severity\": \"info\",\n   \"text\": \"3 of 5 directors were appointed in 2025.\"\n  }\n ],\n \"rule_based_verdict\": \"Look closer\"\n}"
+  }
+ ],
+ "text": "**Verdict: Look closer** — The company made a loss of RM 2.58m in FY2024, which warrants further examination.\n**Red flags**\n* Loss of -RM 2.58m in FY2024 (#latest_loss)\n**Snapshot** \nSinar Gemilang Associates Sdn. Bhd. is a 2-year-old professional services company based in Kuala Lumpur, with revenue of RM 27.80m and a loss of RM 2.58m in FY2024. It is owned by its directors, with the largest shareholder holding 72.94%.\n**Also worth knowing**\n* Operating cash flow was -RM 1.73m in FY2024.\n* The company is relatively young, incorporated on 2023-12-23.",
+ "usage": {
+  "prompt_tokens": 1048,
+  "completion_tokens": 163,
+  "total_tokens": 1211,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "neurons": 61.33098602294922
+ },
+ "seconds": 12.34,
+ "at": "2026-11-24T21:32:14+0800"
+}

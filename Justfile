@@ -20,3 +20,20 @@ lint:
     uv run ruff check
     uv run ruff format --check
     uv run pyrefly check
+
+# Write what the rules found for every company to runs/facts.jsonl.
+facts:
+    uv run python -m summariser facts
+
+# Write summaries/<version>.jsonl. Versions: v0-template, v1-raw, v2-grounded. Add --labelled to run only the
+# 22 hand-labelled companies, or --dry-run to save prompts without calling the model.
+generate version *args:
+    uv run python -m summariser generate {{version}} {{args}}
+
+# Score every version in summaries/ and write eval/results.md.
+eval:
+    uv run python -m summariser eval
+
+# Test the evaluator and the LLM client (no API key needed).
+test:
+    uv run pytest -q

@@ -1,0 +1,26 @@
+{
+ "key": "8ca74e369489f1a9",
+ "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You write one-screen summaries of Malaysian companies for a team that vets suppliers and project partners. They read\nyour summary first to decide whether a company is worth a closer look, so missing a red flag is the worst mistake you\ncan make, and inventing one is the second worst. The records are as of 31 December 2025.\n\nWrite in Markdown, in this order:\n\n1. `**Verdict: <High concern | Look closer | Low concern>** — <one sentence on why>`\n   - High concern: something that could stop the deal (not Active, winding-up petition, bad audit opinion,\n     negative equity, or a situation about to become one of these).\n   - Look closer: real questions to ask before going ahead (losses, falling revenue or profit, material open\n     litigation, missing accounts, a possible change of control).\n   - Low concern: nothing material found.\n2. `**Red flags**` then one bullet per flag, most serious first, each with the number that backs it up. If there\n   are none, write `**Red flags:** none found.` on one line.\n3. `**Snapshot**` then two or three sentences: what the company does, where, how old; size and direction of revenue\n   and profit; who owns it.\n4. Optionally `**Also worth knowing**` with up to three short bullets for minor points.\n\nRules: under 160 words. Plain English for a busy reader, no filler, no advice beyond the verdict. Money as\nRM 1.23m / RM 456k. Never state a number that isn't in the input. If something isn't in the input, don't guess.\n\nYou get facts that were already extracted and checked by code, including a list of flags with a severity and a\nrule-based verdict.\n\n- Every flag with severity \"critical\" or \"warning\" must appear under Red flags, with its number. Don't drop or merge\n  them away.\n- \"info\" flags are optional; use the most useful ones under Also worth knowing.\n- Start from the rule-based verdict. You may move it up or down one level only if the figures clearly support it\n  (for example, equity about to turn negative); if you do, the verdict sentence must say why.\n- Use only numbers that appear in the facts. Don't compute new ones.\n"
+  },
+  {
+   "role": "user",
+   "content": "Facts:\n\n{\n \"registration_number\": \"SYN-000302\",\n \"name\": \"Global Pacific Perunding Sdn. Bhd.\",\n \"industry\": \"Professional Services\",\n \"state\": \"Perak\",\n \"status\": \"Active\",\n \"nature_of_business\": \"Management consulting for SMEs\",\n \"incorporated\": \"2014-01-15\",\n \"age_years\": 12.0,\n \"directors\": 3,\n \"shareholders\": [\n  \"Director 2 (individual, 58.7%)\",\n  \"Director 3 (individual, 29.76%)\",\n  \"Director 1 (individual, 11.54%)\"\n ],\n \"years\": [],\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_against\": [],\n  \"open_against_total\": 0,\n  \"winding_up_against\": []\n },\n \"flags\": [\n  {\n   \"id\": \"no_financials\",\n   \"severity\": \"warning\",\n   \"text\": \"No financial statements on record.\"\n  }\n ],\n \"rule_based_verdict\": \"Look closer\"\n}"
+  }
+ ],
+ "text": "**Verdict: Look closer** — The company has no financial statements on record, which raises questions about its financial health.\n**Red flags**\n* No financial statements on record. (#no_financials)\n**Snapshot** \nGlobal Pacific Perunding Sdn. Bhd. is a 12-year-old management consulting firm for SMEs based in Perak, with 3 directors. \nThe company is actively operating with a simple ownership structure among its directors. \n**Also worth knowing**\n* Incorporated in 2014\n* 3 directors are also shareholders",
+ "usage": {
+  "prompt_tokens": 772,
+  "completion_tokens": 114,
+  "total_tokens": 886,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "neurons": 43.93524932861328
+ },
+ "seconds": 4.21,
+ "at": "2026-11-24T21:31:20+0800"
+}

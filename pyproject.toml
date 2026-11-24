@@ -15,13 +15,14 @@ package = false
 [dependency-groups]
 dev = [
     "pyrefly>=1.4.1",
+    "pytest>=9.2.0",
     "ruff>=0.17.5",
 ]
 
 [tool.ruff]
 line-length = 128
 target-version = "py314"
-include = ["app/**/*.py"]
+include = ["app/**/*.py", "summariser/**/*.py", "tests/**/*.py"]
 
 [tool.ruff.lint]
 select = [
@@ -45,5 +46,12 @@ ignore = ["TRY003"]  # long messages in exceptions are fine
 
 [tool.pyrefly]
 preset = "strict"
-project-includes = ["app"]
+project-includes = ["app", "summariser", "tests"]
 python-version = "3.14"
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+
+[tool.ruff.lint.per-file-ignores]
+"tests/**" = ["S101"]  # assert is how pytest works

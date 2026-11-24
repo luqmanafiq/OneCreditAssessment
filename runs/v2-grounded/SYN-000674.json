@@ -1,0 +1,26 @@
+{
+ "key": "1c47e2a7b4866d35",
+ "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You write one-screen summaries of Malaysian companies for a team that vets suppliers and project partners. They read\nyour summary first to decide whether a company is worth a closer look, so missing a red flag is the worst mistake you\ncan make, and inventing one is the second worst. The records are as of 31 December 2025.\n\nWrite in Markdown, in this order:\n\n1. `**Verdict: <High concern | Look closer | Low concern>** — <one sentence on why>`\n   - High concern: something that could stop the deal (not Active, winding-up petition, bad audit opinion,\n     negative equity, or a situation about to become one of these).\n   - Look closer: real questions to ask before going ahead (losses, falling revenue or profit, material open\n     litigation, missing accounts, a possible change of control).\n   - Low concern: nothing material found.\n2. `**Red flags**` then one bullet per flag, most serious first, each with the number that backs it up. If there\n   are none, write `**Red flags:** none found.` on one line.\n3. `**Snapshot**` then two or three sentences: what the company does, where, how old; size and direction of revenue\n   and profit; who owns it.\n4. Optionally `**Also worth knowing**` with up to three short bullets for minor points.\n\nRules: under 160 words. Plain English for a busy reader, no filler, no advice beyond the verdict. Money as\nRM 1.23m / RM 456k. Never state a number that isn't in the input. If something isn't in the input, don't guess.\n\nYou get facts that were already extracted and checked by code, including a list of flags with a severity and a\nrule-based verdict.\n\n- Every flag with severity \"critical\" or \"warning\" must appear under Red flags, with its number. Don't drop or merge\n  them away.\n- \"info\" flags are optional; use the most useful ones under Also worth knowing.\n- Start from the rule-based verdict. You may move it up or down one level only if the figures clearly support it\n  (for example, equity about to turn negative); if you do, the verdict sentence must say why.\n- Use only numbers that appear in the facts. Don't compute new ones.\n"
+  },
+  {
+   "role": "user",
+   "content": "Facts:\n\n{\n \"registration_number\": \"SYN-000674\",\n \"name\": \"Indah Bestari Hotel Sdn. Bhd.\",\n \"industry\": \"Hospitality\",\n \"state\": \"Selangor\",\n \"status\": \"Active\",\n \"nature_of_business\": \"Boutique hotel in the Klang Valley\",\n \"incorporated\": \"2018-07-08\",\n \"age_years\": 7.5,\n \"directors\": 3,\n \"shareholders\": [\n  \"Director 1 (individual, 66.06%)\",\n  \"Director 3 (individual, 19.39%)\",\n  \"Director 2 (individual, 14.55%)\"\n ],\n \"years\": [\n  {\n   \"year\": 2022,\n   \"year_end\": \"2022-03-31\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 35825185,\n   \"profit_after_tax\": 2591466,\n   \"total_equity\": 29516758,\n   \"borrowings\": 4148657,\n   \"operating_cash_flow\": 3709148,\n   \"cash\": 3052352,\n   \"net_margin\": 0.0723,\n   \"quick_ratio\": 2.7367,\n   \"interest_cover\": 15.9438,\n   \"leverage\": 0.3206\n  },\n  {\n   \"year\": 2023,\n   \"year_end\": \"2023-03-31\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 37035760,\n   \"profit_after_tax\": 2425559,\n   \"total_equity\": 31214649,\n   \"borrowings\": 4288845,\n   \"operating_cash_flow\": 4491854,\n   \"cash\": 5015314,\n   \"net_margin\": 0.0655,\n   \"quick_ratio\": 3.4115,\n   \"interest_cover\": 14.5299,\n   \"leverage\": 0.291\n  },\n  {\n   \"year\": 2024,\n   \"year_end\": \"2024-03-31\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 38796380,\n   \"profit_after_tax\": 2486546,\n   \"total_equity\": 32955231,\n   \"borrowings\": 4492730,\n   \"operating_cash_flow\": 4413850,\n   \"cash\": 2500455,\n   \"net_margin\": 0.0641,\n   \"quick_ratio\": 2.653,\n   \"interest_cover\": 14.2407,\n   \"leverage\": 0.281\n  }\n ],\n \"cases\": {\n  \"total\": 2,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 2,\n  \"open_against\": [],\n  \"open_against_total\": 0,\n  \"winding_up_against\": []\n },\n \"flags\": [],\n \"rule_based_verdict\": \"Low concern\"\n}"
+  }
+ ],
+ "text": "**Verdict: Low concern** — The company has a clean record with no critical or warning flags, and its financials show increasing revenue and positive equity.\n**Red flags:** none found.\n**Snapshot** — Indah Bestari Hotel Sdn. Bhd. is a 7.5-year-old boutique hotel in Selangor, with revenue of RM 38.8m and profit of RM 2.5m in 2024. It is owned by three individual directors.\n**Also worth knowing** \n* The company has two ongoing cases as a plaintiff.\n* It has a healthy quick ratio and interest cover.",
+ "usage": {
+  "prompt_tokens": 1169,
+  "completion_tokens": 129,
+  "total_tokens": 1298,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "neurons": 57.594390869140625
+ },
+ "seconds": 5.97,
+ "at": "2026-11-24T21:31:54+0800"
+}

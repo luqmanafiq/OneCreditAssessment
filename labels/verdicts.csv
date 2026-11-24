@@ -1,0 +1,23 @@
+registration_number,split,verdict,reason
+SYN-000029,dev,Look closer,"Healthy but flat financials; directors holding 79.5% of shares joined the board in Nov 2025, so ownership may have just changed hands"
+SYN-000067,dev,Look closer,"Losses widening every year (RM 4.2m to RM 7.5m), equity down from RM 31.2m to RM 17.6m, quick ratio 0.55"
+SYN-000217,dev,High concern,Auditor disclaimed an opinion on FY2023; later years look fine but the gap needs explaining
+SYN-000302,dev,Look closer,11-year-old company with no financial statements on record
+SYN-000397,dev,Look closer,FY2023 accounts missing; six cases as defendant incl. a settled RM 7.43m claim against RM 2.37m equity
+SYN-000546,dev,Low concern,Large tech company that swung from a RM 27.1m loss to a RM 16.8m profit; leverage rising but cover is 8.6x
+SYN-000923,dev,Look closer,Revenue down 39% and profit down 94% over three years
+SYN-001298,dev,Look closer,"Under three years old, RM 3.66m loss in its only year on record, renamed within months of incorporation"
+SYN-001389,dev,High concern,"Pending winding-up petition and three petitions since 2023, despite growing profits"
+SYN-001645,dev,Low concern,"Steady growth, profitable, clean audits, no litigation"
+SYN-001829,dev,Low concern,Profitable with low leverage; one small pending tenancy case (RM 127k) against RM 11.4m equity
+SYN-001894,dev,Low concern,"70% owned by Harmoni Holdings; profitable, leverage around 2x; it is the plaintiff in all its cases"
+SYN-000381,heldout,Low concern,"Revenue nearly doubled, profitable, 51% held by Gemilang Holdings; leverage rising to 1.65"
+SYN-000451,heldout,High concern,"Negative equity in FY2024 after three loss years, renamed in Nov 2025"
+SYN-000674,heldout,Low concern,"Profitable, low leverage, strong liquidity; only cases are as plaintiff"
+SYN-000785,heldout,High concern,Losses every year have cut equity from RM 5.3m to RM 0.4m (leverage 24x); next year's loss would make equity negative
+SYN-000802,heldout,Look closer,"Two years old, RM 2.58m first-year loss, three of five directors appointed in 2025"
+SYN-001085,heldout,Low concern,Stable profits and clean audits; two new directors in 2025 but they hold only 13.75%
+SYN-001212,heldout,High concern,"Status is Winding up, with winding-up judgments entered against it"
+SYN-001253,heldout,Look closer,No FY2023 accounts; otherwise profitable and stable
+SYN-001529,heldout,Low concern,Turned from a RM 1.08m loss to a RM 745k profit with revenue growing
+SYN-001618,heldout,Look closer,"Loss-making three years running, equity down from RM 6.2m to RM 3.8m; 100% owned by Murni Holdings"

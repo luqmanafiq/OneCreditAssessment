@@ -1,0 +1,26 @@
+{
+ "key": "b24055b189961f53",
+ "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You write one-screen summaries of Malaysian companies for a team that vets suppliers and project partners. They read\nyour summary first to decide whether a company is worth a closer look, so missing a red flag is the worst mistake you\ncan make, and inventing one is the second worst. The records are as of 31 December 2025.\n\nWrite in Markdown, in this order:\n\n1. `**Verdict: <High concern | Look closer | Low concern>** — <one sentence on why>`\n   - High concern: something that could stop the deal (not Active, winding-up petition, bad audit opinion,\n     negative equity, or a situation about to become one of these).\n   - Look closer: real questions to ask before going ahead (losses, falling revenue or profit, material open\n     litigation, missing accounts, a possible change of control).\n   - Low concern: nothing material found.\n2. `**Red flags**` then one bullet per flag, most serious first, each with the number that backs it up. If there\n   are none, write `**Red flags:** none found.` on one line.\n3. `**Snapshot**` then two or three sentences: what the company does, where, how old; size and direction of revenue\n   and profit; who owns it.\n4. Optionally `**Also worth knowing**` with up to three short bullets for minor points.\n\nRules: under 160 words. Plain English for a busy reader, no filler, no advice beyond the verdict. Money as\nRM 1.23m / RM 456k. Never state a number that isn't in the input. If something isn't in the input, don't guess.\n"
+  },
+  {
+   "role": "user",
+   "content": "Summarise this company record. Ratios are decimals (0.12 is 12%); amounts are RM.\n\n{\"registrationNumber\": \"SYN-000302\", \"profile\": {\"companyName\": \"Global Pacific Perunding Sdn. Bhd.\", \"status\": \"Active\", \"companyType\": \"Private limited company\", \"incorporationDate\": \"2014-01-15\", \"industry\": \"Professional Services\", \"state\": \"Perak\", \"natureOfBusiness\": \"Management consulting for SMEs\", \"shareCapital\": 500000, \"formerNames\": []}, \"relationships\": {\"directors\": [{\"name\": \"Director 1\", \"designation\": \"Managing Director\", \"appointedOn\": \"2021-04-15\"}, {\"name\": \"Director 2\", \"designation\": \"Director\", \"appointedOn\": \"2024-05-01\"}, {\"name\": \"Director 3\", \"designation\": \"Executive Director\", \"appointedOn\": \"2018-03-25\"}], \"shareholders\": [{\"type\": \"individual\", \"name\": \"Director 1\", \"percentage\": 11.54}, {\"type\": \"individual\", \"name\": \"Director 3\", \"percentage\": 29.76}, {\"type\": \"individual\", \"name\": \"Director 2\", \"percentage\": 58.7}]}, \"financials\": {\"years\": []}, \"litigation\": {\"cases\": []}}"
+  }
+ ],
+ "text": "**Verdict: Low concern** — The company is Active with no reported issues.\n**Red flags:** none found.\n**Snapshot** — Global Pacific Perunding Sdn. Bhd. provides management consulting services to SMEs in Perak, incorporated in 2014. The company has a share capital of RM 500,000 and is owned by its directors, with Director 2 holding 58.7%. \n**Also worth knowing**\n* The company has three directors, with Director 2 holding the largest share.",
+ "usage": {
+  "prompt_tokens": 684,
+  "completion_tokens": 107,
+  "total_tokens": 791,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "neurons": 40.15485382080078
+ },
+ "seconds": 2.64,
+ "at": "2026-11-24T21:27:46+0800"
+}

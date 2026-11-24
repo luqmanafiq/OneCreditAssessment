@@ -1,0 +1,26 @@
+{
+ "key": "10be42a48de8a310",
+ "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You write one-screen summaries of Malaysian companies for a team that vets suppliers and project partners. They read\nyour summary first to decide whether a company is worth a closer look, so missing a red flag is the worst mistake you\ncan make, and inventing one is the second worst. The records are as of 31 December 2025.\n\nWrite in Markdown, in this order:\n\n1. `**Verdict: <High concern | Look closer | Low concern>** — <one sentence on why>`\n   - High concern: something that could stop the deal (not Active, winding-up petition, bad audit opinion,\n     negative equity, or a situation about to become one of these).\n   - Look closer: real questions to ask before going ahead (losses, falling revenue or profit, material open\n     litigation, missing accounts, a possible change of control).\n   - Low concern: nothing material found.\n2. `**Red flags**` then one bullet per flag, most serious first, each with the number that backs it up. If there\n   are none, write `**Red flags:** none found.` on one line.\n3. `**Snapshot**` then two or three sentences: what the company does, where, how old; size and direction of revenue\n   and profit; who owns it.\n4. Optionally `**Also worth knowing**` with up to three short bullets for minor points.\n\nRules: under 160 words. Plain English for a busy reader, no filler, no advice beyond the verdict. Money as\nRM 1.23m / RM 456k. Never state a number that isn't in the input. If something isn't in the input, don't guess.\n\nYou get facts that were already extracted and checked by code, including a list of flags with a severity and a\nrule-based verdict.\n\n- Every flag with severity \"critical\" or \"warning\" must appear under Red flags, with its number. Don't drop or merge\n  them away.\n- \"info\" flags are optional; use the most useful ones under Also worth knowing.\n- Start from the rule-based verdict. You may move it up or down one level only if the figures clearly support it\n  (for example, equity about to turn negative); if you do, the verdict sentence must say why.\n- Use only numbers that appear in the facts. Don't compute new ones.\n"
+  },
+  {
+   "role": "user",
+   "content": "Facts:\n\n{\n \"registration_number\": \"SYN-001529\",\n \"name\": \"Jaya Unity Precision Sdn. Bhd.\",\n \"industry\": \"Manufacturing\",\n \"state\": \"Sarawak\",\n \"status\": \"Active\",\n \"nature_of_business\": \"Precision machining of metal parts for electronics\",\n \"incorporated\": \"1988-03-23\",\n \"age_years\": 37.8,\n \"directors\": 5,\n \"shareholders\": [\n  \"Director 1 (individual, 75.67%)\",\n  \"Director 5 (individual, 17.16%)\",\n  \"Director 4 (individual, 7.17%)\"\n ],\n \"years\": [\n  {\n   \"year\": 2022,\n   \"year_end\": \"2022-09-30\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 11889417,\n   \"profit_after_tax\": -1084130,\n   \"total_equity\": 3446112,\n   \"borrowings\": 1958615,\n   \"operating_cash_flow\": -58688,\n   \"cash\": 1099281,\n   \"net_margin\": -0.0912,\n   \"quick_ratio\": 1.3622,\n   \"interest_cover\": -9.064,\n   \"leverage\": 1.4088\n  },\n  {\n   \"year\": 2023,\n   \"year_end\": \"2023-09-30\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 13431881,\n   \"profit_after_tax\": -333264,\n   \"total_equity\": 3112848,\n   \"borrowings\": 2212715,\n   \"operating_cash_flow\": 364569,\n   \"cash\": 1136652,\n   \"net_margin\": -0.0248,\n   \"quick_ratio\": 1.065,\n   \"interest_cover\": -1.7384,\n   \"leverage\": 2.0126\n  },\n  {\n   \"year\": 2024,\n   \"year_end\": \"2024-09-30\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 16145308,\n   \"profit_after_tax\": 745161,\n   \"total_equity\": 3634461,\n   \"borrowings\": 2659714,\n   \"operating_cash_flow\": 1894791,\n   \"cash\": 1314487,\n   \"net_margin\": 0.0462,\n   \"quick_ratio\": 1.0276,\n   \"interest_cover\": 7.7025,\n   \"leverage\": 2.1015\n  }\n ],\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_against\": [],\n  \"open_against_total\": 0,\n  \"winding_up_against\": []\n },\n \"flags\": [\n  {\n   \"id\": \"turnaround\",\n   \"severity\": \"info\",\n   \"text\": \"Turned from a -RM 1.08m loss (FY2022) to a RM 745k profit (FY2024).\"\n  }\n ],\n \"rule_based_verdict\": \"Low concern\"\n}"
+  }
+ ],
+ "text": "**Verdict: Low concern** — The company is active, has unqualified audit opinions, and turned a profit in FY2024.\n**Red flags:** none found.\n**Snapshot** — Jaya Unity Precision Sdn. Bhd. is a 37.8-year-old manufacturing company in Sarawak, precision machining metal parts for electronics, with revenue rising to RM 16.15m and a profit of RM 745k in FY2024. It is owned by three individual directors.\n**Also worth knowing**\n* Turned from a RM 1.08m loss (FY2022) to a RM 745k profit (FY2024).",
+ "usage": {
+  "prompt_tokens": 1219,
+  "completion_tokens": 137,
+  "total_tokens": 1356,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "neurons": 60.566219329833984
+ },
+ "seconds": 4.5,
+ "at": "2026-11-24T21:33:02+0800"
+}

@@ -1,0 +1,26 @@
+{
+ "key": "06b35c2472418f2f",
+ "model": "@cf/meta/llama-3.3-70b-instruct-fp8-fast",
+ "messages": [
+  {
+   "role": "system",
+   "content": "You write one-screen summaries of Malaysian companies for a team that vets suppliers and project partners. They read\nyour summary first to decide whether a company is worth a closer look, so missing a red flag is the worst mistake you\ncan make, and inventing one is the second worst. The records are as of 31 December 2025.\n\nWrite in Markdown, in this order:\n\n1. `**Verdict: <High concern | Look closer | Low concern>** — <one sentence on why>`\n   - High concern: something that could stop the deal (not Active, winding-up petition, bad audit opinion,\n     negative equity, or a situation about to become one of these).\n   - Look closer: real questions to ask before going ahead (losses, falling revenue or profit, material open\n     litigation, missing accounts, a possible change of control).\n   - Low concern: nothing material found.\n2. `**Red flags**` then one bullet per flag, most serious first, each with the number that backs it up. If there\n   are none, write `**Red flags:** none found.` on one line.\n3. `**Snapshot**` then two or three sentences: what the company does, where, how old; size and direction of revenue\n   and profit; who owns it.\n4. Optionally `**Also worth knowing**` with up to three short bullets for minor points.\n\nRules: under 160 words. Plain English for a busy reader, no filler, no advice beyond the verdict. Money as\nRM 1.23m / RM 456k. Never state a number that isn't in the input. If something isn't in the input, don't guess.\n\nYou get facts that were already extracted and checked by code, including a list of flags with a severity and a\nrule-based verdict.\n\n- Every flag with severity \"critical\" or \"warning\" must appear under Red flags, with its number. Don't drop or merge\n  them away.\n- \"info\" flags are optional; use the most useful ones under Also worth knowing.\n- Start from the rule-based verdict. You may move it up or down one level only if the figures clearly support it\n  (for example, equity about to turn negative); if you do, the verdict sentence must say why.\n- Use only numbers that appear in the facts. Don't compute new ones.\n"
+  },
+  {
+   "role": "user",
+   "content": "Facts:\n\n{\n \"registration_number\": \"SYN-000381\",\n \"name\": \"Cahaya Harmoni Hotel Sdn. Bhd.\",\n \"industry\": \"Hospitality\",\n \"state\": \"Kedah\",\n \"status\": \"Active\",\n \"nature_of_business\": \"Boutique hotel in Kota Kinabalu\",\n \"incorporated\": \"1995-10-17\",\n \"age_years\": 30.2,\n \"directors\": 2,\n \"shareholders\": [\n  \"Gemilang Holdings Sdn. Bhd. (company, 51%)\",\n  \"Director 1 (individual, 24.89%)\",\n  \"Director 2 (individual, 24.11%)\"\n ],\n \"years\": [\n  {\n   \"year\": 2022,\n   \"year_end\": \"2022-12-31\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 8987761,\n   \"profit_after_tax\": 465234,\n   \"total_equity\": 5624306,\n   \"borrowings\": 3273659,\n   \"operating_cash_flow\": 579675,\n   \"cash\": 1344786,\n   \"net_margin\": 0.0518,\n   \"quick_ratio\": 2.1648,\n   \"interest_cover\": 4.3999,\n   \"leverage\": 0.7785\n  },\n  {\n   \"year\": 2023,\n   \"year_end\": \"2023-12-31\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 12040452,\n   \"profit_after_tax\": 854327,\n   \"total_equity\": 6222335,\n   \"borrowings\": 4385556,\n   \"operating_cash_flow\": 1137859,\n   \"cash\": 1720699,\n   \"net_margin\": 0.071,\n   \"quick_ratio\": 1.6115,\n   \"interest_cover\": 5.6604,\n   \"leverage\": 1.1535\n  },\n  {\n   \"year\": 2024,\n   \"year_end\": \"2024-12-31\",\n   \"audit_opinion\": \"Unqualified\",\n   \"revenue\": 16436671,\n   \"profit_after_tax\": 975406,\n   \"total_equity\": 6905119,\n   \"borrowings\": 5986814,\n   \"operating_cash_flow\": 1197487,\n   \"cash\": 1905164,\n   \"net_margin\": 0.0593,\n   \"quick_ratio\": 1.3575,\n   \"interest_cover\": 4.8977,\n   \"leverage\": 1.6492\n  }\n ],\n \"cases\": {\n  \"total\": 0,\n  \"as_defendant\": 0,\n  \"as_plaintiff\": 0,\n  \"open_against\": [],\n  \"open_against_total\": 0,\n  \"winding_up_against\": []\n },\n \"flags\": [\n  {\n   \"id\": \"corporate_parent\",\n   \"severity\": \"info\",\n   \"text\": \"51% owned by Gemilang Holdings Sdn. Bhd. (SYN-009757); check the parent too.\"\n  }\n ],\n \"rule_based_verdict\": \"Low concern\"\n}"
+  }
+ ],
+ "text": "**Verdict: Low concern** — The company is active, profitable, and has a positive equity position.\n**Red flags:** none found.\n**Snapshot** — Cahaya Harmoni Hotel Sdn. Bhd. is a 30-year-old boutique hotel operator in Kota Kinabalu, Kedah, with revenue rising from RM 8.98m to RM 16.44m and profit from RM 465k to RM 975k between 2022 and 2024. It is 51% owned by Gemilang Holdings Sdn. Bhd.\n**Also worth knowing** \n* 51% owned by Gemilang Holdings Sdn. Bhd. (SYN-009757)",
+ "usage": {
+  "prompt_tokens": 1225,
+  "completion_tokens": 148,
+  "total_tokens": 1373,
+  "prompt_tokens_details": {
+   "cached_tokens": 0
+  },
+  "neurons": 62.979087829589844
+ },
+ "seconds": 4.97,
+ "at": "2026-11-24T21:31:27+0800"
+}
