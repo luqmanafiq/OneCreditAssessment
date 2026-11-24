@@ -165,10 +165,16 @@ SYN-000785 is in my held-out set, so adding that rule now would mean the held-ou
 I've left it as a next step.
 
 **On these metrics, v2 and the no-model template score the same.** The difference is the writing, which none of my
-metrics measure. Reading them side by side, v2 explains instead of listing ![v0 vs v2, risky company](docs/risky-SYN-000785.png)
-![v0 vs v2, clean company](docs/clean-SYN-001645.png). It has presentation bugs too: it sometimes leaks internal flag IDs into
-the text, e.g. "(#persistent_losses)", formats losses as "loss -RM 2.69m", and repeats the parent company in two
-sections.
+metrics measure. Reading them side by side, v2 explains instead of listing. It has presentation bugs too: it sometimes
+leaks internal flag IDs into the text, e.g. "(#persistent_losses)", and repeats the parent company in two sections.
+Both versions write "loss -RM 2.69m", a double negative that comes from my own flag text in `facts.py`, not from the
+model.
+
+v0 (left) against v2 (right) on a risky company and a clean one:
+
+![v0 vs v2 on SYN-000785, a risky company](docs/risky-SYN-000785.png)
+
+![v0 vs v2 on SYN-001645, a clean company](docs/clean-SYN-001645.png)
 
 ## 4. What you'd do next, and how you'd keep improving it
 
